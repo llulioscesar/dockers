@@ -1,3 +1,5 @@
-# dockers
+# Docker Compose
 
-ssss
+- Postgres
+- MariaDB
+- Prestashop
