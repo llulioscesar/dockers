@@ -2,8 +2,8 @@
 
 ## Info
 - contenedor nombre: mariadb
-- puero: 5432
-- usuario: postgres
+- puero: 3306
+- usuario: root
 - contraseña: 1234
 
 ## Permisos remotos
