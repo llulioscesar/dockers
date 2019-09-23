@@ -1,5 +1,11 @@
 # Docker MariaDB
 
+## Info
+- contenedor nombre: mariadb
+- puero: 5432
+- usuario: postgres
+- contraseña: 1234
+
 ## Permisos remotos
 ~~~~
 docker exec -it mariadb mysql -u root -p
