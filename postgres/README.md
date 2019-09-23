@@ -2,9 +2,9 @@
 
 ## Info
 - **Contenedor nombre**: postgres
-- **puero**: 5432
-- **usuario**: postgres
-- **contraseña**: 1234
+- **Puero**: 5432
+- **Usuario**: postgres
+- **Contraseña**: 1234
 
 ## File
 ~~~
