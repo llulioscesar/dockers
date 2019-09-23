@@ -1,10 +1,10 @@
 # Docker MariaDB
 
 ## Info
-- **contenedor nombre**: mariadb
-- **puero**: 3306
-- **usuario**: root
-- **contraseña**: 1234
+- **Contenedor nombre**: mariadb
+- **Puero**: 3306
+- **Usuario**: root
+- **Contraseña**: 1234
 
 ## Permisos remotos
 ~~~~
