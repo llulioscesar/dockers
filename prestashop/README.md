@@ -1,6 +1,7 @@
 # Docker Prestashop
 
 ## Info
+- **Contenedor nombre**: prestashop
 - **Puerto**: 8080
 
 ## Info MariaDB
@@ -10,6 +11,16 @@ docker inspect mariadb | grep Hostname
 ----------------------------------------------
 "HostnamePath": "/var/snap/docker/common/var-lib-docker/containers/db09806e787b87f831be68044ef02a9027d42d345e30fe681f123a740ac81856/hostname",
             "Hostname": "db09806e787b",
+~~~
+
+## Post Install
+- Eliminar la carpeta "INSTALL"
+~~~
+docker exec -it prestashop rm -R install
+~~~
+- Cambiar nombre de la carpeta "ADMIN" a "PANEL". El nuevo nombre es como se desee 
+~~~
+docker exec -it prestashop mv admin panel
 ~~~
 
 ## File
