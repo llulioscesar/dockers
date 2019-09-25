@@ -61,12 +61,12 @@ docker rm <nombre_del_contenedor>
 ~~~
 - **Ejecutar comando dentro del contenedor**
 ~~~
-docker exec -it <nombre_del_contenedor> <instruccion>
+docker exec -it <nombre_del_contenedor> <comando o instruccion a ejecutar>
 ~~~
 
 # Crear contenedor con Docker Compose
 ~~~
-docker-compose up -d <nombre_del_contenedor> <comando o instruccion a ejecutar>
+docker-compose up -d
 ~~~
 
 # Contenedores
