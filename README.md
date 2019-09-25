@@ -21,7 +21,18 @@ apt-cache policy docker-ce
 sudo apt install docker-ce
 ~~~
 
-# Comando
+## Inicio automatico
+~~~
+sudo systemctl enable docker
+~~~
+
+## Acceso no ROOT
+~~~
+sudo groupadd docker
+sudo usermod -aG docker $USER
+~~~
+
+# Crear contenedor con Docker Compose
 ~~~
 docker-compose up -d
 ~~~
@@ -30,4 +41,5 @@ docker-compose up -d
 - Postgres
 - MariaDB
 - Prestashop
+- Nginx Proxy
 
