@@ -5,6 +5,7 @@
 - **Puero**: 3306
 - **Usuario**: root
 - **Contraseña**: 1234
+- **Imagen**: mariadb:latest
 
 ## Permisos remotos
 ~~~~
