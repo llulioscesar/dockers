@@ -3,12 +3,16 @@
 ## Info
 - **Contenedor nombre**: prestashop
 - **Puerto**: 8080
+- **Imagen**: prestashop/prestashop:latest
+- **Base de datos**: MariaDB
 
 ## Info MariaDB
 Obtener el nombre del HOST del contenedor de MariaDB para la configuracion de Prestashop en la conexion a la base de datos
 ~~~
 docker inspect mariadb | grep Hostname
-----------------------------------------------
+~~~~
+Resultado:
+~~~~
 "HostnamePath": "/var/snap/docker/common/var-lib-docker/containers/db09806e787b87f831be68044ef02a9027d42d345e30fe681f123a740ac81856/hostname",
             "Hostname": "db09806e787b",
 ~~~
@@ -23,7 +27,7 @@ docker exec -it prestashop rm -R install
 docker exec -it prestashop mv admin panel
 ~~~
 
-## File
+## Usando docker-compose
 ~~~
 version: '3.1'
 services:
@@ -47,4 +51,7 @@ networks:
     driver: bridge
   mariadb_default:
     external: true
+~~~
+~~~
+docker-compose d -up
 ~~~
