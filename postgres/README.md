@@ -5,8 +5,9 @@
 - **Puero**: 5432
 - **Usuario**: postgres
 - **Contraseña**: 1234
+- **Imagen**: postgres:alpine
 
-## File
+## Usando docker-compose
 ~~~
 version: '3.1'
 services:
@@ -20,4 +21,7 @@ services:
       POSTGRES_PASSWORD: "1234"
     volumes:
       - ./datos:/var/lib/postgresql/data
+~~~
+~~~
+docker-compose up -d
 ~~~
