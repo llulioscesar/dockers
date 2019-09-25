@@ -59,3 +59,45 @@ Reemplazar **blog.midominio.com** por su dominio o subdominio
 ~~~
 docker run -d --name blog --expose 80 --net nginx-proxy -e VIRTUAL_HOST=blog.midominio.com wordpress
 ~~~
+
+### Usando docker-compose
+~~~
+version: "3"
+
+services:
+   db_node_domain:
+     image: mysql:5.7
+     volumes:
+       - db_data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: PASSWORD
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: wordpress
+       MYSQL_PASSWORD: PASSWORD
+     container_name: wordpress_db
+
+   wordpress:
+     depends_on:
+       - db_node_domain
+     image: wordpress:latest
+     expose:
+       - 80
+     restart: always
+     environment:
+       VIRTUAL_HOST: blog.midominio.com
+       WORDPRESS_DB_HOST: db_node_domain:3306
+       WORDPRESS_DB_USER: wordpress
+       WORDPRESS_DB_PASSWORD: PASSWORD
+     container_name: wordpress
+volumes:
+    db_data:
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
+~~~
+~~~
+docker-compose up -d
+~~~
