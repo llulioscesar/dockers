@@ -3,7 +3,7 @@
 ## Info
 - **Puerto**: 80
 - **Contenerdor nombre**: nginx-proxy
-- **[Mas informacion](https://github.com/jwilder/nginx-proxy)**
+- **Imagen**: [jwilder/nginx-proxy](https://github.com/jwilder/nginx-proxy)
 
 ## Crear red
 Ejecutar antes de crear el contenedor
