@@ -48,9 +48,9 @@ networks:
 ## Ejemplo
 
 ### Usando Docker
-Reemplazar **blog.midominio.com** por su dominio o subdominio
-**--expose 80** permite que el trafico fluya hacia el contenedor en el puero **80**
-**--net nginx-proxy** asegura que estamos usando la red Docker que creamos anteriormente.
+Reemplazar **blog.midominio.com** por su dominio o subdominio *separate paragraph*
+**--expose 80** permite que el trafico fluya hacia el contenedor en el puero **80** *separate paragraph*
+**--net nginx-proxy** asegura que estamos usando la red Docker que creamos anteriormente. *separate paragraph*
 **-e VIRTUAL_HOST=blog.midominio.com** dirigir cualquier tráfico que solicite ese dominio a este nuevo contenedor Docker
 ~~~
 docker run -d --name blog --expose 80 --net nginx-proxy -e VIRTUAL_HOST=blog.midominio.com wordpress
