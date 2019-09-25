@@ -41,6 +41,25 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 ~~~
 
+## Comandos docker
+Reemplazar <nombre_del_contenedor> por el nombre real. **Ejemplo**
+~~~
+docker start postgres
+~~~
+
+- **Iniciar contenedor**
+~~~
+docker start <nombre_del_contenedor>
+~~~
+- **Detener contenedor**
+~~~
+docker stop <nombre_del_contenedor>
+~~~
+- **Eliminar contenedor**
+~~~
+docker rm <nombre_del_contenedor>
+~~~
+
 # Crear contenedor con Docker Compose
 ~~~
 docker-compose up -d
