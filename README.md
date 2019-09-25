@@ -42,7 +42,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 ~~~
 
 ## Comandos docker
-Reemplazar <nombre_del_contenedor> por el nombre real. **Ejemplo**
+Reemplazar **<nombre_del_contenedor>** por el nombre real. **Ejemplo**
 ~~~
 docker start postgres
 ~~~
@@ -59,10 +59,14 @@ docker stop <nombre_del_contenedor>
 ~~~
 docker rm <nombre_del_contenedor>
 ~~~
+- **Ejecutar comando dentro del contenedor**
+~~~
+docker exec -it 
+~~~
 
 # Crear contenedor con Docker Compose
 ~~~
-docker-compose up -d
+docker-compose up -d <nombre_del_contenedor> <comando o instruccion a ejecutar>
 ~~~
 
 # Contenedores
