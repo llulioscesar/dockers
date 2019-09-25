@@ -11,6 +11,10 @@ Ejecutar antes de crear el contenedor
 docker network create nginx-proxy
 ~~~
 
+## SSL Contenedor
+Si desea que el proxy inverso se conecte a su backend usando HTTPS en lugar de HTTP, configúrelo **VIRTUAL_PROTO=https** en el contenedor de backend.
+> **Nota** Si usa **VIRTUAL_PROTO=https** y su contenedor de back-end expone los puertos **80** y **443**, nginx-proxy usará HTTPS en el puerto 80. Esto es casi seguro que no es lo que desea, por lo que también debe incluirlo **VIRTUAL_PORT=443**.
+
 ## En linea
 ~~~
 docker run -d -p 80:80 --name nginx-proxy --net nginx-proxy -v /var/run/docker.sock:/tmp/docker.sock jwilder/nginx-proxy
