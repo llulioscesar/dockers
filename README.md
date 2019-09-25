@@ -1,6 +1,6 @@
 # Docker Compose
 
-## Instalar Docker
+# Instalar Docker
 - Debian/Ubuntu y derivados
 ~~~
 sudo apt update
@@ -30,6 +30,15 @@ sudo systemctl enable docker
 ~~~
 sudo groupadd docker
 sudo usermod -aG docker $USER
+~~~
+
+## [Instalar Docker Compose](https://docs.docker.com/compose/install/)
+Mas informacion en [Docker Compose](https://docs.docker.com/compose/install/)
+~~~
+sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+~~~
+~~~
+sudo chmod +x /usr/local/bin/docker-compose
 ~~~
 
 # Crear contenedor con Docker Compose
