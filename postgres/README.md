@@ -20,7 +20,11 @@ services:
     environment:
       POSTGRES_PASSWORD: "1234"
     volumes:
-      - ./datos:/var/lib/postgresql/data
+      - postgres-data
+  postgres-data:
+    image: busybox
+    volumes:
+      - ./data:/var/lib/postgresql/data
 ~~~
 ~~~
 docker-compose up -d
