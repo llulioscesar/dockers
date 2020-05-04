@@ -32,6 +32,7 @@ services:
       - "3306:3306"
     environment:
       ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ROOT_PASSWORD: 1234
     volumes:
       - ./datos:/var/lib/mysql
     command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
@@ -48,7 +49,8 @@ services:
     ports:
       - "3306:3306"
     environment:
-      ALLOW_EMPTY_PASSWORD: yes
+      ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_ROOT_PASSWORD: 1234
     volumes:
       - mariadb_data
     command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
