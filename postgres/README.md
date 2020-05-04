@@ -17,7 +17,27 @@ docker volume create --name mariadb_data
 docker volume create --name postgres-data
 ~~~
 
-## Usando docker-compose
+## docker-compose (Unix)
+~~~
+version: '3.1'
+services:
+  postgres:
+    container_name: postgres
+    restart: always
+    image: postgres:alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: "1234"
+    volumes:
+      - postgres-data
+  postgres-data:
+    image: busybox
+    volumes:
+      - ./data:/var/lib/postgresql/data
+~~~
+
+## docker-compose (Windows)
 ~~~
 version: '3.1'
 services:
