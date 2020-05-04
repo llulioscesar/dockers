@@ -7,24 +7,29 @@
 - **Contraseña**: 1234
 - **Imagen**: postgres:alpine
 
+## Cree un volumen para la persistencia MariaDB
+~~~
+docker volume create --name mariadb_data
+~~~
+
 ## Usando docker-compose
 ~~~
 version: '3.1'
 services:
-  postgres:
-    container_name: postgres
+  mariadb:
+    container_name: mariadb
     restart: always
-    image: postgres:alpine
+    image: mariadb:latest
     ports:
-      - "5432:5432"
+      - "3306:3306"
     environment:
-      POSTGRES_PASSWORD: "1234"
+      ALLOW_EMPTY_PASSWORD: yes
     volumes:
-      - postgres-data
-  postgres-data:
-    image: busybox
+      - mariadb_data
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+  mariadb_data:
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - ./datos:/var/lib/mysql
 ~~~
 ~~~
 docker-compose up -d
