@@ -12,24 +12,29 @@
 docker volume create --name mariadb_data
 ~~~
 
+## Cree un volumen para la persistencia Postgres
+~~~
+docker volume create --name postgres-data
+~~~
+
 ## Usando docker-compose
 ~~~
 version: '3.1'
 services:
-  mariadb:
-    container_name: mariadb
+  postgres:
+    container_name: postgres
     restart: always
-    image: mariadb:latest
+    image: postgres:alpine
     ports:
-      - "3306:3306"
+      - "5432:5432"
     environment:
-      ALLOW_EMPTY_PASSWORD: yes
+      POSTGRES_PASSWORD: "1234"
     volumes:
-      - mariadb_data
-    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
-  mariadb_data:
+      - postgres-data
+  postgres-data:
+    image: busybox
     volumes:
-      - ./datos:/var/lib/mysql
+      - ./data:/var/lib/postgresql/data
 ~~~
 ~~~
 docker-compose up -d
