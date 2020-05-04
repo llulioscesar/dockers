@@ -20,7 +20,7 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '1234' WITH GRANT OPTION
 docker volume create --name mariadb_data
 ~~~
 
-## docker-compose (unix)
+## docker-compose (Unix)
 ~~~
 version: '3.1'
 services:
@@ -31,7 +31,7 @@ services:
     ports:
       - "3306:3306"
     environment:
-      ALLOW_EMPTY_PASSWORD: yes
+      ALLOW_EMPTY_PASSWORD: "yes"
     volumes:
       - ./datos:/var/lib/mysql
     command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
