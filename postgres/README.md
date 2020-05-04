@@ -7,11 +7,6 @@
 - **Contraseña**: 1234
 - **Imagen**: postgres:alpine
 
-## Cree un volumen para la persistencia MariaDB
-~~~
-docker volume create --name mariadb_data
-~~~
-
 ## Cree un volumen para la persistencia Postgres
 ~~~
 docker volume create --name postgres-data
