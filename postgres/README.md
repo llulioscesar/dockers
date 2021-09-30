@@ -25,11 +25,8 @@ services:
     environment:
       POSTGRES_PASSWORD: "1234"
     volumes:
-      - postgres-data
-  postgres-data:
-    image: busybox
-    volumes:
       - ./data:/var/lib/postgresql/data
+      
 ~~~
 
 ## docker-compose (Windows)
